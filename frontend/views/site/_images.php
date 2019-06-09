@@ -6,6 +6,7 @@ use yii\widgets\Pjax;
 use yii\helpers\Url;
 
 $image = $img ? '<img src="' . $img . '">' : '';
+$style = $style ? 'display:none' : '';
 
 ?>
 
@@ -23,7 +24,7 @@ $image = $img ? '<img src="' . $img . '">' : '';
         <?=$image ?>
     </span>
 
-    <div class="container">
+    <div class="container" id="container-id" style="<?=$style ?>">
         <?= $form->field($tree, 'reCaptcha')->widget(
             \himiklab\yii2\recaptcha\ReCaptcha2::className(),
             [

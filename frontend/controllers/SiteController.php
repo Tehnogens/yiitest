@@ -87,6 +87,7 @@ class SiteController extends Controller
                 return $this->renderAjax('_images', [
                     'tree'  => $tree,
                     'img'   => $tree->getRandomImages(),
+                    'style' => true,
                 ]);
             }
         }

@@ -14,9 +14,7 @@ $this->title = 'My Yii Application';
 ]); ?>
 
 <div id="modal_value">
-
     <?=$this->render('_images', ['tree'  => $tree]); ?>
-
 </div>
 
 <?php \yii\bootstrap\Modal::end(); ?>
@@ -36,6 +34,7 @@ $script = <<< JS
         $('.a-link').click(function () {
             $('#w0').modal('show');
             $('.image-list').html('');
+            $('#container-id').fadeIn('fast');
         });
     });
 JS;
