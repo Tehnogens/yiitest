@@ -42,6 +42,11 @@ return [
             'rules' => [
             ],
         ],
+        'reCaptcha' => [
+            'class' => 'himiklab\yii2\recaptcha\ReCaptchaConfig',
+            'siteKeyV2' => '6LcT46cUAAAAALLibUBIduNa1NTpJ5idfErQZiDF',
+            'secretV2' => '6LcT46cUAAAAAPvgkWSPqepy8mM4_6ez0B5ck-ss',
+        ],
     ],
     'params' => $params,
 ];
