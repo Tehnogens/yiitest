@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fdf99348862e239b2f74150068b0cefa",
+    "content-hash": "d8848c04e3851822ae46c99af61c8f10",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -325,6 +325,57 @@
                 "html"
             ],
             "time": "2018-02-23T01:58:20+00:00"
+        },
+        {
+            "name": "giphy/giphy-php-client",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Giphy/giphy-php-client.git",
+                "reference": "dcdf2d87ef03f0421407e3533d064e3dc1828153"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Giphy/giphy-php-client/zipball/dcdf2d87ef03f0421407e3533d064e3dc1828153",
+                "reference": "dcdf2d87ef03f0421407e3533d064e3dc1828153",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-json": "*",
+                "ext-mbstring": "*",
+                "php": ">=5.4"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "~1.12",
+                "phpunit/phpunit": "~4.8",
+                "satooshi/php-coveralls": "~1.0",
+                "squizlabs/php_codesniffer": "~2.6"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "GPH\\": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MPLv2"
+            ],
+            "authors": [
+                {
+                    "name": "Swagger and contributors",
+                    "homepage": "https://github.com/swagger-api/swagger-codegen"
+                }
+            ],
+            "homepage": "https://github.com/Giphy/giphy-php-client",
+            "keywords": [
+                "api",
+                "php",
+                "sdk",
+                "swagger"
+            ],
+            "time": "2018-12-10T21:06:40+00:00"
         },
         {
             "name": "himiklab/yii2-recaptcha-widget",
@@ -3789,7 +3840,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "giphy/giphy-php-client": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

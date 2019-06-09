@@ -49,6 +49,10 @@ class SiteController extends Controller
                     'logout' => ['post'],
                 ],
             ],
+            [
+                'class' => 'yii\filters\AjaxFilter',
+                'only' => ['images']
+            ],
         ];
     }
 
@@ -82,13 +86,22 @@ class SiteController extends Controller
             if ($tree->load(Yii::$app->request->post()) && $tree->validate()) {
                 return $this->renderAjax('_images', [
                     'tree'  => $tree,
-                    'img'   => 'img',
+                    'img'   => $tree->getRandomImages(),
                 ]);
             }
         }
 
         return $this->render('index', [
             'model' => $dataTree,
+            'tree'  => $tree,
+        ]);
+    }
+
+    public function actionImages()
+    {
+        $tree = new Tree();
+
+        return $this->renderAjax('_images', [
             'tree'  => $tree,
         ]);
     }

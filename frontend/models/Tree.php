@@ -5,6 +5,8 @@ namespace frontend\models;
 use Yii;
 use yii\base\Model;
 use yii\helpers\ArrayHelper;
+use GPH\Api as Gph;
+use yii\helpers\Json;
 
 class Tree extends Model
 {
@@ -12,6 +14,8 @@ class Tree extends Model
     public $rMax = 15;
     public $result = [];
     public $reCaptcha;
+
+    private $apiKeyGph = 'K5R0HarmVTjUb47N5FSw2aX877BLRNzG';
 
     public function rules()
     {
@@ -55,6 +59,18 @@ class Tree extends Model
             echo '</ul>';
         }
         echo '</ul>';
+    }
 
+    public function getRandomImages()
+    {
+        $api = new Gph\DefaultApi();
+
+        try {
+            $result = $api->gifsRandomGet($this->apiKeyGph);
+            $items = Json::decode($result);
+            return  $items['data']['image_url'];
+        } catch (Exception $e) {
+            echo 'Exception when calling DefaultApi->gifsRandomGet: ', $e->getMessage(), PHP_EOL;
+        }
     }
 }
