@@ -40,4 +40,21 @@ class Tree extends Model
     {
         return rand($this->rMin, $this->rMax);
     }
+
+    public static function getChildNode($data)
+    {
+        echo '<ul><li><a class="a-link">' . $data['key'] . ' ' . $data['name'] . '</a></li><ul>';
+        if(is_array($data['child'])) {
+            foreach ($data['child'] as $key => $value) {
+                if (is_array($value['child'])) {
+                    self::getChildNode($value);
+                } else {
+                    echo '<li><a class="a-link">' . $value['key'] . ' ' . $value['name'] . '</a></li>';
+                }
+            }
+            echo '</ul>';
+        }
+        echo '</ul>';
+
+    }
 }

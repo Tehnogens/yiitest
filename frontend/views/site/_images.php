@@ -38,4 +38,5 @@ $image = $img ? '<img src="' . $img . '">' : '';
     <div class="clearfix"></div>
 
 <?php ActiveForm::end(); ?>
+
 <?php Pjax::end() ?>

@@ -78,6 +78,15 @@ class SiteController extends Controller
         $tree = new Tree();
         $dataTree = $tree->getTree();
 
+        if(Yii::$app->request->isPjax) {
+            if ($tree->load(Yii::$app->request->post()) && $tree->validate()) {
+                return $this->renderAjax('_images', [
+                    'tree'  => $tree,
+                    'img'   => 'img',
+                ]);
+            }
+        }
+
         return $this->render('index', [
             'model' => $dataTree,
             'tree'  => $tree,
