@@ -14,6 +14,7 @@ use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
+use frontend\models\Tree;
 
 /**
  * Site controller
@@ -74,7 +75,13 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        $tree = new Tree();
+        $dataTree = $tree->getTree();
+
+        return $this->render('index', [
+            'model' => $dataTree,
+            'tree'  => $tree,
+        ]);
     }
 
     /**
